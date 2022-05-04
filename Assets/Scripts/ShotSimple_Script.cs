@@ -8,7 +8,7 @@ public class ShotSimple_Script : MonoBehaviour
 
     public void shot()
     {
-        shot(0,0);
+        shot(ShotManager_Script.targetPos);
     }
     public void shot(float x,float y)
     {
