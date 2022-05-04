@@ -995,6 +995,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShotSimple_: {fileID: 992157345}
   b_onoff: {fileID: 843513197}
+  RPS: 1
 --- !u!1 &1807578225
 GameObject:
   m_ObjectHideFlags: 0
