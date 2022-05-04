@@ -1143,7 +1143,7 @@ MonoBehaviour:
   ShotSimple_: {fileID: 992157345}
   b_onoff1: {fileID: 843513197}
   b_onoff2: {fileID: 975586243}
-  RPS: 5
+  RPS: 50
 --- !u!1 &1807578225
 GameObject:
   m_ObjectHideFlags: 0
