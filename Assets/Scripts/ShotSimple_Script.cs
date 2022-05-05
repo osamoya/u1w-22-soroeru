@@ -47,7 +47,7 @@ public class ShotSimple_Script : MonoBehaviour
     }
     
 
-    Vector2 GetDiff(Vector2 start,Vector2 goal)
+    public static Vector2 GetDiff(Vector2 start,Vector2 goal)
     {
         return (goal - start).normalized;
     }
