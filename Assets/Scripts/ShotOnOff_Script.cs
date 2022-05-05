@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class ShotOnOff_Script : MonoBehaviour
 {
+    public int AMMO {get;set;}
     public bool Shooting { get; private set; }
     public GameObject bullet;
     [SerializeField] bool isRotate;
     [SerializeField] GameObject muzzle;
-    [SerializeField] int d;
+    [SerializeField] int d1;
+    [SerializeField] int d2;
     // Start is called before the first frame update
     void Start()
     {
-        
+        AMMO = 50;
     }
 
     // Update is called once per frame
@@ -20,10 +22,19 @@ public class ShotOnOff_Script : MonoBehaviour
     {
         if (Shooting)
         {
-            //shot(ShotManager_Script.targetPos) ;
-            shot(d);
+            if (AMMO < 3) { return; }
+            shot(0);
+            shot(d1);
+            shot(d2);
+            AMMO -= 3;
         }
     }
+
+    void shot()
+    {
+        shot(ShotManager_Script.targetPos);
+    }
+
 
     public void onClickButton()
     {
@@ -53,7 +64,7 @@ public class ShotOnOff_Script : MonoBehaviour
     }
     public void shot(int deg)
     {
-        
+        deg += 90;
         GameObject b = Instantiate(bullet);
         b.transform.position = muzzle.transform.position;
 

@@ -1847,7 +1847,8 @@ MonoBehaviour:
   bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
   isRotate: 1
   muzzle: {fileID: 63627916}
-  d: 90
+  d1: 15
+  d2: -15
 --- !u!1 &702865907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2361,8 @@ MonoBehaviour:
   bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
   isRotate: 0
   muzzle: {fileID: 63627916}
-  d: 0
+  d1: 0
+  d2: 0
 --- !u!1 &1099790448
 GameObject:
   m_ObjectHideFlags: 0
