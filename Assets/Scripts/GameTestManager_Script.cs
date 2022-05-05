@@ -27,14 +27,14 @@ public class GameTestManager_Script: MonoBehaviour
         {
             if (count % (300/RPS) == 0)
             {
-                ShotSimple_.shot(1);
+                //ShotSimple_.shot(1);
             }
         }
         if (shotOnOff_2.Shooting)
         {
             if (count % (300 / RPS) == 0)
             {
-                ShotSimple_.shot(2);
+                //ShotSimple_.shot(2);
             }
         }
         count++;
