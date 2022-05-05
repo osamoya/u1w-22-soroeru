@@ -61,11 +61,15 @@ public class GameManager_Script : MonoBehaviour
             ply_p.SetActive(false);
             NowState = state.Buying;
         }
-        Cover.SetActive(false);
+        Invoke(nameof(CoverPanelClose), 1f);
     }
     public void DoChange()
     {
         Debug.Log(".5fŒã‚É•Ï‚¦‚Ü‚·");
-        Invoke(nameof(ChangePanel), .5f);
+        Invoke(nameof(ChangePanel), 1f);
+    }
+    void CoverPanelClose()
+    {
+        Cover.SetActive(false);
     }
 }
