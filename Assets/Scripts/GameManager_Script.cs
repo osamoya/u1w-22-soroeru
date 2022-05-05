@@ -7,6 +7,7 @@ public class GameManager_Script : MonoBehaviour
 {
     [SerializeField] GameObject buy_p;
     [SerializeField] GameObject ply_p;
+    [SerializeField] GameObject Cover;
     enum state { 
         Buying,
         Shooting,
@@ -60,5 +61,11 @@ public class GameManager_Script : MonoBehaviour
             ply_p.SetActive(false);
             NowState = state.Buying;
         }
+        Cover.SetActive(false);
+    }
+    public void DoChange()
+    {
+        Debug.Log(".5fŒã‚É•Ï‚¦‚Ü‚·");
+        Invoke(nameof(ChangePanel), .5f);
     }
 }

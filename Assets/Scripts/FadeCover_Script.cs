@@ -24,12 +24,12 @@ public class FadeCover_Script : MonoBehaviour
     }
     public void OnClickFade()
     {
-        //Debug.Log("fade");
+        Debug.Log("fade");
+        panel.SetActive(true);
         Sequence sequence = DOTween.Sequence();
         sequence.Append(p.DOFade(1, 1f));
         sequence.Append(p.DOFade(0, 1f));
         //DOFade(0, 1f).;
         sequence.Play();
-        
     }
 }

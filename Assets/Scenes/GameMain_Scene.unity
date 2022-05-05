@@ -1350,7 +1350,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 481591271}
         m_TargetAssemblyTypeName: GameManager_Script, Assembly-CSharp
-        m_MethodName: ChangePanel
+        m_MethodName: DoChange
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1571,6 +1571,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buy_p: {fileID: 1877587105}
   ply_p: {fileID: 1619854490}
+  Cover: {fileID: 1499803274}
 --- !u!1 &611021390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3189,7 +3190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1499803275
 RectTransform:
   m_ObjectHideFlags: 0
