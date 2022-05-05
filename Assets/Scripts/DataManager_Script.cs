@@ -4,12 +4,36 @@ using UnityEngine;
 
 public class DataManager_Script : MonoBehaviour
 {
-    [SerializeField] int b1;//値段
-    [SerializeField] int b2;
-    [SerializeField] int coin;
+    [SerializeField] public int b1;//値段
+    [SerializeField] ShotOnOff_Script shot1;
+
+    [SerializeField] public int b2;//値段
+    [SerializeField] ShotOnOff_Script shot2;
     
-    public void OnClickBuy()
+    [SerializeField] public static int coin { get; private set; }
+    [SerializeField] int startCoin;
+    private void Start()
     {
+        coin = startCoin;
+    }
+    public void BuyAMMO(int n)
+    {
+        Debug.Log("買います");
+        int price=999;
+        switch (n)
+        {
+            case 1:price = b1; shot1.AMMO += 10; break;
+            case 2:price = b2; shot2.AMMO += 10; break;
+            default:return;
+        }
+
+        
+
+        coin -= price;
+        
+        Debug.Log("残り："+coin);
+
+
 
     }
 }
