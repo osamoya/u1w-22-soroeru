@@ -45,15 +45,20 @@ public class GameManager_Script : MonoBehaviour
 
     public void ChangePanel()
     {
+        Debug.Log("change");
         if (NowState==state.Buying)
         {
+            Debug.Log("b2p");
             buy_p.SetActive(false);
             ply_p.SetActive(true);
+            NowState = state.Shooting;
         }
         else
         {
+            Debug.Log("p2b");
             buy_p.SetActive(true);
             ply_p.SetActive(false);
+            NowState = state.Buying;
         }
     }
 }
