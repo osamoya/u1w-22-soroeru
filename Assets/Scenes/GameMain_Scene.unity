@@ -360,7 +360,6 @@ GameObject:
   m_Component:
   - component: {fileID: 63627919}
   - component: {fileID: 63627918}
-  - component: {fileID: 63627917}
   m_Layer: 0
   m_Name: Me
   m_TagString: Untagged
@@ -368,20 +367,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &63627917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 63627916}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff4471835e4859478132453164f2aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
-  bullet2: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
 --- !u!212 &63627918
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1466,12 +1451,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 481591266}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8d6c0232e764a84d9f68331d37d8d25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShotSimple_: {fileID: 63627917}
+  ShotSimple_: {fileID: 0}
   b_onoff1: {fileID: 687240483}
   b_onoff2: {fileID: 884969722}
   RPS: 50
@@ -2371,9 +2356,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
   isRotate: 0
-  muzzle: {fileID: 0}
+  muzzle: {fileID: 63627916}
 --- !u!1 &1099790448
 GameObject:
   m_ObjectHideFlags: 0
