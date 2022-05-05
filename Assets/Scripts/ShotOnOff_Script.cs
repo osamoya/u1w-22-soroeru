@@ -8,6 +8,7 @@ public class ShotOnOff_Script : MonoBehaviour
     public GameObject bullet;
     [SerializeField] bool isRotate;
     [SerializeField] GameObject muzzle;
+    [SerializeField] int d;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,8 @@ public class ShotOnOff_Script : MonoBehaviour
     {
         if (Shooting)
         {
-            shot(ShotManager_Script.targetPos) ;
+            //shot(ShotManager_Script.targetPos) ;
+            shot(d);
         }
     }
 
@@ -49,5 +51,19 @@ public class ShotOnOff_Script : MonoBehaviour
     {
         shot(v.x, v.y);
     }
+    public void shot(int deg)
+    {
+        //è„Ç0Ç…ÇµÇΩÇ¢
+        deg += 90;
+        GameObject b = Instantiate(bullet);
+        b.transform.position = muzzle.transform.position;
+        
+        //Ç±Ç±Ç…âÒì]
 
+        //Ç»Ç»ÇﬂÇ…î≠éÀ
+        float theta = deg * Mathf.Deg2Rad;
+        Vector2 v = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
+        b.GetComponent<Rigidbody2D>().AddForce(v);
+
+    }
 }
