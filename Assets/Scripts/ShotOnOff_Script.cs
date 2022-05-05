@@ -7,7 +7,7 @@ public class ShotOnOff_Script : MonoBehaviour
     public bool Shooting { get; private set; }
     public GameObject bullet;
     [SerializeField] bool isRotate;
-
+    [SerializeField] GameObject muzzle;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +31,7 @@ public class ShotOnOff_Script : MonoBehaviour
     public void shot(float x, float y)
     {
         GameObject b=Instantiate(bullet);
-        b.transform.position = this.transform.position;
+        b.transform.position = muzzle.transform.position;
         Vector3 diff = b.transform.position - new Vector3(x, y, 0);
         
         if (isRotate)

@@ -1451,6 +1451,7 @@ GameObject:
   - component: {fileID: 481591269}
   - component: {fileID: 481591268}
   - component: {fileID: 481591267}
+  - component: {fileID: 481591270}
   m_Layer: 0
   m_Name: TestManager
   m_TagString: Untagged
@@ -1501,6 +1502,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &481591270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481591266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d59b54ec51ba7fb429bdaf3e31dddd0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  b1: 0
+  b2: 0
+  coin: 0
 --- !u!1 &611021390
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,6 +1859,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
+  isRotate: 1
+  muzzle: {fileID: 63627916}
 --- !u!1 &702865907
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,6 +2371,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  isRotate: 0
+  muzzle: {fileID: 0}
 --- !u!1 &1099790448
 GameObject:
   m_ObjectHideFlags: 0
