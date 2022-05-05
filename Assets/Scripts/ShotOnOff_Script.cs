@@ -53,12 +53,13 @@ public class ShotOnOff_Script : MonoBehaviour
     }
     public void shot(int deg)
     {
-        //è„Ç0Ç…ÇµÇΩÇ¢
-        deg += 90;
+        
         GameObject b = Instantiate(bullet);
         b.transform.position = muzzle.transform.position;
-        
-        //Ç±Ç±Ç…âÒì]
+
+        //Ç»Ç»ÇﬂÇ…å¸ÇØÇƒ
+        Quaternion q = Quaternion.AngleAxis(deg, new Vector3(0, 0, 1));
+        b.transform.rotation = q * b.transform.rotation;
 
         //Ç»Ç»ÇﬂÇ…î≠éÀ
         float theta = deg * Mathf.Deg2Rad;
