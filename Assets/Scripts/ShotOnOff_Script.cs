@@ -11,23 +11,34 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] GameObject muzzle;
     [SerializeField] int d1;
     [SerializeField] int d2;
+    [SerializeField] AudioClip clip;
+    [SerializeField] AudioSource source;
     // Start is called before the first frame update
     void Start()
     {
-        AMMO = 50;
+        AMMO = 50000;
+        source.mute=true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         if (Shooting)
         {
-            if (AMMO < 3) { return; }
+            if (AMMO < 3) { source.mute = true; return; }
             shot(0);
             shot(d1);
             shot(d2);
             AMMO -= 3;
+            Debug.Log("–Â‚ç‚µ‚Ü‚·");
+            source.mute = false;
         }
+        else
+        {
+            source.mute = true;
+        }
+        
     }
 
     void shot()
