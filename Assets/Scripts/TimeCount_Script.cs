@@ -7,7 +7,6 @@ public class TimeCount_Script : MonoBehaviour
 {
     float timeCount;
     bool isCounting;
-    int deg = 0;
     int dispM=0;
     int dispH=12;
     string s;
@@ -45,7 +44,7 @@ public class TimeCount_Script : MonoBehaviour
                 //Ç±Ç±Ç…âΩÇÁÇ©ÇÃèàóù
                 isCounting = false;
             }
-            s = "" +dispH+":"+dispM;
+            s = "" +dispH+":"+dispM.ToString("D2");
         }
         else
         {
