@@ -63,9 +63,10 @@ public class TimeCount_Script : MonoBehaviour
                 isOpening = true;
                 se.OnClickSE();
             }
-            if (dispD>3)
+            if (dispD>1&&!isOpening)
             {
                 Debug.Log("I—¹I");
+                this.GetComponent<FadeCover_Script>().OnClickFade();
             }
             s = ""+dispD+"“ú–Ú " +dispH+":"+dispM.ToString("D2");
         }

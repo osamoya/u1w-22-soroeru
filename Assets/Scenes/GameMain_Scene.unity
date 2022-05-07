@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 134211733}
   - component: {fileID: 134211736}
   - component: {fileID: 134211735}
+  - component: {fileID: 134211737}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -855,6 +856,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GM: {fileID: 481591271}
   se: {fileID: 134211735}
+--- !u!114 &134211737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134211731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed254e5d6c81bc04cb635f4890a616b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1389869280}
 --- !u!1 &146478842
 GameObject:
   m_ObjectHideFlags: 0
@@ -4194,6 +4208,7 @@ GameObject:
   - component: {fileID: 1323725927}
   - component: {fileID: 1323725926}
   - component: {fileID: 1323725925}
+  - component: {fileID: 1323725928}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -4264,7 +4279,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1323725926}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1323725928}
+        m_TargetAssemblyTypeName: Retry_Script, Assembly-CSharp
+        m_MethodName: OnclickRtry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323725926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4303,6 +4330,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323725923}
   m_CullTransparentMesh: 1
+--- !u!114 &1323725928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323725923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5405b110ac218418fb31483ade8991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 0}
 --- !u!1 &1333343663
 GameObject:
   m_ObjectHideFlags: 0
