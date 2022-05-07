@@ -10,7 +10,7 @@ public class TargetMove_Script : MonoBehaviour
     {
         this.transform.DOMoveX(0f,2)
             .SetEase(Ease.InCubic)//Ease.InOutBounce)
-            .SetLoops(10,LoopType.Yoyo);
+            .SetLoops(10000,LoopType.Yoyo);
     }
 
     
