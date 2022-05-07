@@ -10,6 +10,7 @@ public class BulletStock_Script : MonoBehaviour
 {
     [SerializeField] int Stock;
     [SerializeField] int MAX;
+    [SerializeField] List<GameObject> imgs=new List<GameObject>();
     
     public void OnClickBuy()
     {
@@ -24,5 +25,12 @@ public class BulletStock_Script : MonoBehaviour
     private void Update()
     {
         //‚±‚±‚ÉStock‚É‚æ‚é•`‰æ
+        //Stock‚Ì”š‚æ‚è‘å‚«‚¢‚à‚Ì‚Ì•`‰æ‚ğ‚µ‚È‚¢‚æ‚¤‚É‚·‚é
+        
+        for (int i=0;i<MAX;i++)
+        {
+            if (i < Stock) imgs[i].SetActive(true);
+            else imgs[i].SetActive(false);
+        }
     }
 }
