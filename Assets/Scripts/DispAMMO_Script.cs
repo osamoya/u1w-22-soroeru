@@ -6,6 +6,7 @@ public class DispAMMO_Script : MonoBehaviour
 {
     DataManager_Script dataManager_;
     [SerializeField] int bullet_num;
+    [SerializeField] BulletStock_Script stock;
     int price;
     bool canBuy;
     // Start is called before the first frame update
@@ -43,7 +44,15 @@ public class DispAMMO_Script : MonoBehaviour
             //色を変えたり表示したり
             return;
         }
+        //MAXの確認
+        if (stock.isMax)
+        {
+            //それ用の処理
+            return;
+        }
+
         //買う処理
-        dataManager_.BuyAMMO(bullet_num);
+        //dataManager_.BuyAMMO(bullet_num);
+        stock.OnClickBuy(bullet_num);
     }
 }

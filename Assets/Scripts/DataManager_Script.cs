@@ -22,8 +22,8 @@ public class DataManager_Script : MonoBehaviour
         int price=999;
         switch (n)
         {
-            case 1:price = b1; shot1.AMMO += 10; break;
-            case 2:price = b2; shot2.AMMO += 10; break;
+            case 1:price = b1;; break;
+            case 2:price = b2;; break;
             default:return;
         }
 

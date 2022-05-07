@@ -8,19 +8,24 @@ using UnityEngine;
 /// </summary>
 public class BulletStock_Script : MonoBehaviour
 {
+    DataManager_Script dataManager_;
     [SerializeField] int Stock;
     [SerializeField] int MAX;
+    public bool isMax { get; private set; }
+    public bool canReload { get; private set; }
     [SerializeField] List<GameObject> imgs=new List<GameObject>();
     
-    public void OnClickBuy()
+    public void OnClickBuy(int n)
     {
-        if (Stock < MAX)
-        {
-            //ここで買う指示
-            return;
-        }
-        //限界値で買えない
-        //ここに処理
+        //変更：こいつは確定で買えるときに呼ばれる
+        Stock++;
+        //ここに、金額の話
+        dataManager_.BuyAMMO(n);
+    }
+    private void Start()
+    {
+        dataManager_ = GameObject.Find("TestManager").GetComponent<DataManager_Script>();
+
     }
     private void Update()
     {
@@ -32,5 +37,11 @@ public class BulletStock_Script : MonoBehaviour
             if (i < Stock) imgs[i].SetActive(true);
             else imgs[i].SetActive(false);
         }
+        if (Stock > 0) { canReload = true; }
+    }
+    public void reload()
+    {
+        Stock--;
+        if (Stock <= 0) { canReload = false; }
     }
 }
