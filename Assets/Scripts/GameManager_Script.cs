@@ -8,12 +8,12 @@ public class GameManager_Script : MonoBehaviour
     [SerializeField] GameObject buy_p;
     [SerializeField] GameObject ply_p;
     [SerializeField] GameObject Cover;
-    enum state { 
+    public enum state { 
         Buying,
         Shooting,
         Changing
     }
-    state NowState;
+    public static state NowState { get; private set; }
     // Start is called before the first frame update
     void Start()
     {
