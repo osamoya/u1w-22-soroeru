@@ -45,7 +45,7 @@ public class TimeCount_Script : MonoBehaviour
                 dispH++;
                 dispM = 0;
             }
-            if (dispH >= 13&&isOpening)//’è
+            if (dispH >= 22&&isOpening)//’è
             {
                 //‚±‚±‚É‰½‚ç‚©‚Ìˆ—
                 Debug.Log("Time");
