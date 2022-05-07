@@ -23,6 +23,11 @@ public class ShotOnOff_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager_Script.NowState != GameManager_Script.state.Shooting) {
+            Shooting = false;
+            source.mute = true;
+            return;
+        }
         
         if (Shooting)
         {
@@ -49,6 +54,7 @@ public class ShotOnOff_Script : MonoBehaviour
 
     public void onClickButton()
     {
+        if (GameManager_Script.NowState != GameManager_Script.state.Shooting) { return; }
         Shooting = !Shooting;
     }
 
