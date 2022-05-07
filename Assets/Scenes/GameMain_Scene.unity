@@ -1552,6 +1552,7 @@ GameObject:
   - component: {fileID: 481591267}
   - component: {fileID: 481591270}
   - component: {fileID: 481591271}
+  - component: {fileID: 481591272}
   m_Layer: 0
   m_Name: TestManager
   m_TagString: Untagged
@@ -1634,6 +1635,19 @@ MonoBehaviour:
   buy_p: {fileID: 1877587105}
   ply_p: {fileID: 1619854490}
   Cover: {fileID: 1499803274}
+--- !u!114 &481591272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481591266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed254e5d6c81bc04cb635f4890a616b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panel: {fileID: 1499803274}
 --- !u!1 &611021390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2839,8 @@ GameObject:
   - component: {fileID: 1099790449}
   - component: {fileID: 1099790451}
   - component: {fileID: 1099790450}
+  - component: {fileID: 1099790452}
+  - component: {fileID: 1099790453}
   m_Layer: 5
   m_Name: TIME
   m_TagString: Untagged
@@ -2893,6 +2909,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099790448}
   m_CullTransparentMesh: 1
+--- !u!114 &1099790452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099790448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6409291682c211f40927660a6a177b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GM: {fileID: 481591271}
+  se: {fileID: 1099790453}
+--- !u!114 &1099790453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099790448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b84723139f9734ab7ea3381f2e9d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: 3a3320f4c0928574d8873cb5ec1de374, type: 3}
+  source: {fileID: 781664943}
 --- !u!1 &1119894559
 GameObject:
   m_ObjectHideFlags: 0
