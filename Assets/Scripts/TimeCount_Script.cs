@@ -67,11 +67,11 @@ public class TimeCount_Script : MonoBehaviour
             {
                 Debug.Log("I—¹I");
             }
-            s = ""+dispD+"“ú–Ú" +dispH+":"+dispM.ToString("D2");
+            s = ""+dispD+"“ú–Ú " +dispH+":"+dispM.ToString("D2");
         }
         else
         {
-            s = "" + dispD + "“ú–Ú" + dispH + ":" + dispM.ToString("D2");
+            s = "" + dispD + "“ú–Ú " + dispH + ":" + dispM.ToString("D2");
         }
         //•¶š—ñ‚É‚·‚é
         tmp.text = s;
