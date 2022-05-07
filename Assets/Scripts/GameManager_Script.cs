@@ -17,7 +17,7 @@ public class GameManager_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        NowState = state.Buying;
+        NowState = state.Shooting;
     }
 
     // Update is called once per frame
