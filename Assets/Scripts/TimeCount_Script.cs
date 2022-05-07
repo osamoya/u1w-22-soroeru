@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class TimeCount_Script : MonoBehaviour
 {
+    [SerializeField] GameManager_Script GM;
+    [SerializeField] SoundSE_Script se;
     float timeCount;
     bool isCounting;
     int dispM=0;
@@ -24,7 +26,7 @@ public class TimeCount_Script : MonoBehaviour
     {
         if (isCounting)
         {
-            timeCount += Time.deltaTime;
+            timeCount += Time.deltaTime*10;
             //timecount‚ª1‚ğ’´‚¦‚½ê‡
             if (timeCount >= 1)
             {
@@ -39,10 +41,13 @@ public class TimeCount_Script : MonoBehaviour
                 dispH++;
                 dispM = 0;
             }
-            if (dispH == 24)//’è
+            if (dispH >= 13)//’è
             {
                 //‚±‚±‚É‰½‚ç‚©‚Ìˆ—
+                Debug.Log("Time");
+                GM.DoChange();
                 isCounting = false;
+                se.OnClickSE();
             }
             s = "" +dispH+":"+dispM.ToString("D2");
         }

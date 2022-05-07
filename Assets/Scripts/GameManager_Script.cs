@@ -66,6 +66,7 @@ public class GameManager_Script : MonoBehaviour
     public void DoChange()
     {
         Debug.Log(".5fŒã‚É•Ï‚¦‚Ü‚·");
+        GetComponent<FadeCover_Script>().OnClickFade();
         Invoke(nameof(ChangePanel), 1f);
     }
     void CoverPanelClose()
