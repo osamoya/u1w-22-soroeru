@@ -13,10 +13,11 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] int d2;
     [SerializeField] AudioClip clip;
     [SerializeField] AudioSource source;
+    [SerializeField] BulletStock_Script stock;
     // Start is called before the first frame update
     void Start()
     {
-        AMMO = 50000;
+        AMMO = 500;
         source.mute=true;
     }
 
@@ -31,7 +32,14 @@ public class ShotOnOff_Script : MonoBehaviour
         
         if (Shooting)
         {
-            if (AMMO < 3) { source.mute = true; return; }
+            if (AMMO < 3) {
+                if (stock.canReload)
+                {
+                    stock.reload();
+                    AMMO += 1000;
+                }
+                source.mute = true; 
+                return; }
             shot(0);
             shot(d1);
             shot(d2);

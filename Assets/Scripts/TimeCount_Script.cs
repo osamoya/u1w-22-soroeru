@@ -11,7 +11,7 @@ public class TimeCount_Script : MonoBehaviour
     bool isCounting;
     bool isOpening;
     int dispM=0;
-    int dispH=12;
+    int dispH=0;
     int dispD = 1;
     string s;
     Text text;
@@ -63,7 +63,7 @@ public class TimeCount_Script : MonoBehaviour
                 isOpening = true;
                 se.OnClickSE();
             }
-            if (dispD>1&&!isOpening)
+            if (dispD>3&&!isOpening)
             {
                 Debug.Log("èIóπÅI");
                 this.GetComponent<FadeCover_Script>().OnClickFade();

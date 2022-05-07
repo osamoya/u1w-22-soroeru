@@ -11,6 +11,7 @@ public class BulletStock_Script : MonoBehaviour
     [SerializeField] int Stock;
     [SerializeField] int MAX;
     public bool isMax { get; private set; }
+    public bool canReload { get; private set; }
     [SerializeField] List<GameObject> imgs=new List<GameObject>();
     
     public void OnClickBuy()
@@ -30,5 +31,11 @@ public class BulletStock_Script : MonoBehaviour
             if (i < Stock) imgs[i].SetActive(true);
             else imgs[i].SetActive(false);
         }
+        if (Stock > 0) { canReload = true; }
+    }
+    public void reload()
+    {
+        Stock--;
+        if (Stock <= 0) { canReload = false; }
     }
 }

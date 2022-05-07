@@ -2740,6 +2740,7 @@ MonoBehaviour:
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
   source: {fileID: 687240487}
+  stock: {fileID: 1506818204}
 --- !u!82 &687240487
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3396,6 +3397,7 @@ MonoBehaviour:
   d2: 0
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
   source: {fileID: 884969726}
+  stock: {fileID: 1506818204}
 --- !u!82 &884969726
 AudioSource:
   m_ObjectHideFlags: 0
