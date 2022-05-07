@@ -10,17 +10,15 @@ public class BulletStock_Script : MonoBehaviour
 {
     [SerializeField] int Stock;
     [SerializeField] int MAX;
+    public bool isMax { get; private set; }
     [SerializeField] List<GameObject> imgs=new List<GameObject>();
     
     public void OnClickBuy()
     {
-        if (Stock < MAX)
-        {
-            //ここで買う指示
-            return;
-        }
-        //限界値で買えない
-        //ここに処理
+        //変更：こいつは確定で買えるときに呼ばれる
+        Stock++;
+        //ここに、金額の話
+
     }
     private void Update()
     {

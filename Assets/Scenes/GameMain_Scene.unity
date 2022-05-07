@@ -1695,7 +1695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet_num: 1
-  stock: {fileID: 0}
+  stock: {fileID: 1506818204}
 --- !u!1 &303620347
 GameObject:
   m_ObjectHideFlags: 0
@@ -4722,7 +4722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet_num: 2
-  stock: {fileID: 0}
+  stock: {fileID: 1581744360}
 --- !u!1 &1418409901
 GameObject:
   m_ObjectHideFlags: 0
