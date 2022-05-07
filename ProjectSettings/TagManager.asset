@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BackGround
+    uniqueID: 1999850665
+    locked: 0
+  - name: GameChara
+    uniqueID: 238948107
+    locked: 0
