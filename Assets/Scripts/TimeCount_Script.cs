@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class TimeCount_Script : MonoBehaviour
 {
     [SerializeField] GameManager_Script GM;
@@ -13,11 +13,12 @@ public class TimeCount_Script : MonoBehaviour
     int dispH=12;
     string s;
     Text text;
+    TextMeshProUGUI tmp;
     // Start is called before the first frame update
     void Start()
     {
         isCounting = true;
-        text = GetComponent<Text>();
+        tmp = GetComponent<TextMeshProUGUI>();
         
     }
 
@@ -49,13 +50,13 @@ public class TimeCount_Script : MonoBehaviour
                 isCounting = false;
                 se.OnClickSE();
             }
-            s = "" +dispH+":"+dispM.ToString("D2");
+            s = "åªç›éûçè" +dispH+":"+dispM.ToString("D2");
         }
         else
         {
             s = "CLOSE";
         }
         //ï∂éöóÒÇ…Ç∑ÇÈ
-        text.text = s;
+        tmp.text = s;
     }
 }
