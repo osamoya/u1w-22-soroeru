@@ -53,6 +53,6 @@ public class DispAMMO_Script : MonoBehaviour
 
         //”ƒ‚¤ˆ—
         //dataManager_.BuyAMMO(bullet_num);
-        stock.OnClickBuy();
+        stock.OnClickBuy(bullet_num);
     }
 }
