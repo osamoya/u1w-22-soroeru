@@ -9,8 +9,10 @@ public class TimeCount_Script : MonoBehaviour
     [SerializeField] SoundSE_Script se;
     float timeCount;
     bool isCounting;
+    bool isOpening;
     int dispM=0;
     int dispH=12;
+    int dispD = 1;
     string s;
     Text text;
     TextMeshProUGUI tmp;
@@ -18,6 +20,7 @@ public class TimeCount_Script : MonoBehaviour
     void Start()
     {
         isCounting = true;
+        isOpening = true;
         tmp = GetComponent<TextMeshProUGUI>();
         
     }
@@ -27,7 +30,7 @@ public class TimeCount_Script : MonoBehaviour
     {
         if (isCounting)
         {
-            timeCount += Time.deltaTime*10;
+            timeCount += Time.deltaTime*50;
             //timecount‚ª1‚ğ’´‚¦‚½ê‡
             if (timeCount >= 1)
             {
@@ -42,19 +45,33 @@ public class TimeCount_Script : MonoBehaviour
                 dispH++;
                 dispM = 0;
             }
-            if (dispH >= 13)//’è
+            if (dispH >= 13&&isOpening)//’è
             {
                 //‚±‚±‚É‰½‚ç‚©‚Ìˆ—
                 Debug.Log("Time");
                 GM.DoChange();
-                isCounting = false;
+                isOpening = false;
                 se.OnClickSE();
             }
-            s = "Œ»İ" +dispH+":"+dispM.ToString("D2");
+            if (dispH >= 24)
+            {
+                Debug.Log("Ÿ‚Ì“ú");
+                dispH = 10;
+                dispM = 0;
+                dispD++;
+                GM.DoChange();
+                isOpening = true;
+                se.OnClickSE();
+            }
+            if (dispD>3)
+            {
+                Debug.Log("I—¹I");
+            }
+            s = ""+dispD+"“ú–Ú" +dispH+":"+dispM.ToString("D2");
         }
         else
         {
-            s = "CLOSE";
+            s = "" + dispD + "“ú–Ú" + dispH + ":" + dispM.ToString("D2");
         }
         //•¶š—ñ‚É‚·‚é
         tmp.text = s;
