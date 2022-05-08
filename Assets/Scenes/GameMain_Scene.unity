@@ -5264,7 +5264,7 @@ MonoBehaviour:
   RPS: 6
   spead: 2
   muzzle: {fileID: 1613158427}
-  haveSub: 0
+  haveSub: 1
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
