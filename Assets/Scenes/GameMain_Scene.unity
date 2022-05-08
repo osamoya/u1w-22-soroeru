@@ -1518,7 +1518,6 @@ MonoBehaviour:
   RPS: 5
   spead: 1
   muzzle: {fileID: 1613158427}
-  muzzle2: {fileID: 295512137}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -1542,7 +1541,6 @@ MonoBehaviour:
   RPS: 5
   spead: 1
   muzzle: {fileID: 295512137}
-  muzzle2: {fileID: 295512137}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -2916,7 +2914,6 @@ MonoBehaviour:
   RPS: 2
   spead: 1
   muzzle: {fileID: 1613158427}
-  muzzle2: {fileID: 295512137}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -2940,7 +2937,6 @@ MonoBehaviour:
   RPS: 1
   spead: 1
   muzzle: {fileID: 295512137}
-  muzzle2: {fileID: 295512137}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -3095,10 +3091,9 @@ MonoBehaviour:
   bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
   isRotate: 1
   isLook: 1
-  RPS: 10
-  spead: 1
+  RPS: 5
+  spead: 3
   muzzle: {fileID: 63627916}
-  muzzle2: {fileID: 0}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -3759,7 +3754,6 @@ MonoBehaviour:
   RPS: 2
   spead: 1
   muzzle: {fileID: 63627916}
-  muzzle2: {fileID: 0}
   d1: 0
   d2: 0
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}

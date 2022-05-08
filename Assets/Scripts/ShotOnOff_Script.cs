@@ -12,7 +12,6 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] int RPS;
     [SerializeField] float spead;
     [SerializeField] GameObject muzzle;
-    [SerializeField] GameObject muzzle2;
     [SerializeField] int d1;
     [SerializeField] int d2;
     [SerializeField] AudioClip clip;
@@ -22,7 +21,7 @@ public class ShotOnOff_Script : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AMMO = 500;
+        AMMO = 100;
         source.mute=true;
     }
 
