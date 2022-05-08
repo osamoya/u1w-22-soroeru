@@ -1269,6 +1269,9 @@ GameObject:
   - component: {fileID: 189396379}
   - component: {fileID: 189396378}
   - component: {fileID: 189396377}
+  - component: {fileID: 189396381}
+  - component: {fileID: 189396382}
+  - component: {fileID: 189396380}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -1338,7 +1341,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 189396378}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 189396381}
+        m_TargetAssemblyTypeName: ShotOnOff_Script, Assembly-CSharp
+        m_MethodName: onClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 189396382}
+        m_TargetAssemblyTypeName: ShotOnOff_Script, Assembly-CSharp
+        m_MethodName: onClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &189396378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1377,6 +1404,146 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 189396375}
   m_CullTransparentMesh: 1
+--- !u!82 &189396380
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189396375}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: fd4949ba437b204419a59ccbc373830c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &189396381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189396375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
+  isRotate: 1
+  isLook: 0
+  muzzle: {fileID: 1613158427}
+  muzzle2: {fileID: 295512137}
+  d1: 15
+  d2: -15
+  clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
+  source: {fileID: 189396380}
+  stock: {fileID: 1506818204}
+--- !u!114 &189396382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189396375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
+  isRotate: 1
+  isLook: 0
+  muzzle: {fileID: 295512137}
+  muzzle2: {fileID: 295512137}
+  d1: 15
+  d2: -15
+  clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
+  source: {fileID: 189396380}
+  stock: {fileID: 1506818204}
 --- !u!1 &252559396
 GameObject:
   m_ObjectHideFlags: 0
@@ -2593,6 +2760,8 @@ GameObject:
   - component: {fileID: 613960489}
   - component: {fileID: 613960488}
   - component: {fileID: 613960487}
+  - component: {fileID: 613960490}
+  - component: {fileID: 613960491}
   m_Layer: 5
   m_Name: Button (3)
   m_TagString: Untagged
@@ -2662,7 +2831,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 613960488}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 613960490}
+        m_TargetAssemblyTypeName: ShotOnOff_Script, Assembly-CSharp
+        m_MethodName: onClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 613960491}
+        m_TargetAssemblyTypeName: ShotOnOff_Script, Assembly-CSharp
+        m_MethodName: onClickButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &613960488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2701,6 +2894,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 613960485}
   m_CullTransparentMesh: 1
+--- !u!114 &613960490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613960485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
+  isRotate: 0
+  isLook: 1
+  muzzle: {fileID: 1613158427}
+  muzzle2: {fileID: 295512137}
+  d1: 15
+  d2: -15
+  clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
+  source: {fileID: 189396380}
+  stock: {fileID: 1506818204}
+--- !u!114 &613960491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613960485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4045c35a3cf0b45b9bfb7ae069ce4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
+  isRotate: 0
+  isLook: 1
+  muzzle: {fileID: 295512137}
+  muzzle2: {fileID: 295512137}
+  d1: 15
+  d2: -15
+  clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
+  source: {fileID: 189396380}
+  stock: {fileID: 1506818204}
 --- !u!1 &687240481
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,7 +3086,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 8973376804760600811, guid: 484efdf4d8e563740bb72099a78c909e, type: 3}
   isRotate: 1
+  isLook: 1
   muzzle: {fileID: 63627916}
+  muzzle2: {fileID: 0}
   d1: 15
   d2: -15
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -3506,7 +3745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 261279923779077908, guid: 5e46783943080a649ab638c358d2a7a0, type: 3}
   isRotate: 0
+  isLook: 1
   muzzle: {fileID: 63627916}
+  muzzle2: {fileID: 0}
   d1: 0
   d2: 0
   clip: {fileID: 8300000, guid: 7103e6b2dc4358846b7fe56398496713, type: 3}
@@ -6213,7 +6454,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1877587106
 RectTransform:
   m_ObjectHideFlags: 0

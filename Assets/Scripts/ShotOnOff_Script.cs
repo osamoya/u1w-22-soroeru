@@ -8,12 +8,15 @@ public class ShotOnOff_Script : MonoBehaviour
     public bool Shooting { get; private set; }
     public GameObject bullet;
     [SerializeField] bool isRotate;
+    [SerializeField] bool isLook;
     [SerializeField] GameObject muzzle;
+    [SerializeField] GameObject muzzle2;
     [SerializeField] int d1;
     [SerializeField] int d2;
     [SerializeField] AudioClip clip;
     [SerializeField] AudioSource source;
     [SerializeField] BulletStock_Script stock;
+    int flameCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,20 +35,20 @@ public class ShotOnOff_Script : MonoBehaviour
         
         if (Shooting)
         {
-            if (AMMO < 3) {
-                if (stock.canReload)
-                {
-                    stock.reload();
-                    AMMO += 1000;
-                }
-                source.mute = true; 
-                return; }
-            shot(0);
-            shot(d1);
-            shot(d2);
-            AMMO -= 3;
-            Debug.Log("ñ¬ÇÁÇµÇ‹Ç∑");
-            source.mute = false;
+            flameCount++;
+
+            if (isLook)//í«îˆÇÃÇŸÇ§
+            {
+                shot4u();
+                return;
+            }
+            else
+            {
+                Shot3way();
+                return;
+            }
+            
+            
         }
         else
         {
@@ -53,6 +56,50 @@ public class ShotOnOff_Script : MonoBehaviour
         }
         
     }
+
+
+    void Shot3way()
+    {
+        
+        if (AMMO < 3)
+        {
+            if (!stock.canReload)
+            {
+                source.mute = true;return;
+            }
+            stock.reload();
+            AMMO += 1000;
+        }
+        //âπÇèoÇµÇƒ
+        source.mute = false;
+
+        if (flameCount % 20 != 0) { return; }
+        shot(0);
+        shot(d1);
+        shot(d2);
+        AMMO -= 3;
+        
+
+    }
+    void shot4u()
+    {
+
+        if (AMMO < 1)
+        {
+            if (!stock.canReload)
+            {
+                source.mute = true; return;
+            }
+            stock.reload();
+            AMMO += 1000;
+        }
+        source.mute = false;
+        if (flameCount % 20 != 0) { return; }
+        shot();
+        AMMO--;
+        
+    }
+
 
     void shot()
     {
@@ -81,6 +128,24 @@ public class ShotOnOff_Script : MonoBehaviour
         }
         
         b.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b.transform.position, new Vector2(x, y)));
+        Debug.Log("1Ç¬ÇﬂèIóπ");
+        if (!isLook)
+        {
+            Debug.Log("Ç±Ç±Ç‹Ç≈óàÇƒÇ‹Ç∑");
+            GameObject b2 = Instantiate(bullet);
+            b2.transform.position = muzzle2.transform.position;
+            diff = b2.transform.position - new Vector3(x, y, 0);
+
+            if (isRotate)
+            {
+                b2.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);//Ç±Ç±Ç≈ê≥ñ 
+                                                                                   //Ç≥ÇÁÇ…90ìxÇ∏ÇÁÇµÇƒê≥ñ Ç∆Ç¢Ç§Ç±Ç∆Ç…Ç∑ÇÈ
+                Quaternion q = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
+                b2.transform.rotation = q * b2.transform.rotation;
+            }
+
+            b2.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b2.transform.position, new Vector2(x, y)));
+        }
     }
 
     public void shot(Vector2 v)
