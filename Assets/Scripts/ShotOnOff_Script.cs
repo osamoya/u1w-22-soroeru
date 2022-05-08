@@ -18,6 +18,7 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] AudioSource source;
     [SerializeField] BulletStock_Script stock;
     int flameCount;
+    float timecount;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class ShotOnOff_Script : MonoBehaviour
         if (Shooting)
         {
             flameCount++;
-
+            timecount += Time.deltaTime;
             if (isLook)//í«îˆÇÃÇŸÇ§
             {
                 shot4u();
@@ -69,17 +70,21 @@ public class ShotOnOff_Script : MonoBehaviour
                 source.mute = true;return;
             }
             stock.reload();
-            AMMO += 10;
+            AMMO += 100;
         }
         //âπÇèoÇµÇƒ
+        Debug.Log("muteon:"+(1.0f/RPS)+";"+timecount);
         source.mute = false;
 
-        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
+        //if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
+        if (timecount<(1.0f/RPS)) { return; }
+
+        Debug.Log("shot:"+timecount);
         shot(0);
         shot(d1);
         shot(d2);
         AMMO -= 3;
-        
+        timecount = 0;
 
     }
     void shot4u()
@@ -92,13 +97,14 @@ public class ShotOnOff_Script : MonoBehaviour
                 source.mute = true; return;
             }
             stock.reload();
-            AMMO += 1000;
+            AMMO += 100;
         }
         source.mute = false;
-        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
+        //if (flameCount % ((int)((1f / Time.deltaTime) / RPS)) != 0) { return; }
+        if (timecount < (1.0f / RPS)) { return; }
         shot();
         AMMO--;
-        
+        timecount = 0;
     }
 
 
