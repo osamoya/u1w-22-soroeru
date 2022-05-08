@@ -6,6 +6,7 @@ using DG.Tweening;
 public class TargetMove_Script : MonoBehaviour
 {
     Vector2 move=new Vector2(0,0);
+    Vector2 center = new Vector2(-4.5f, 3);
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -20,7 +21,7 @@ public class TargetMove_Script : MonoBehaviour
         //fixedÅŒã‚Å‰Šú‰»‚µ‚ÄAÅ‰‚ÉˆÚ“®‚³‚¹‚é
 
         //ˆÚ“®‚³‚¹‚é
-        rb.AddForce(move-new Vector2(transform.position.x,transform.position.y));
+        rb.AddForce(center-new Vector2(transform.position.x,transform.position.y));
 
         //‰Šú‰»
         move = new Vector2(0,0);
