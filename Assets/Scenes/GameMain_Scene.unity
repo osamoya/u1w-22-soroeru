@@ -2347,9 +2347,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d59b54ec51ba7fb429bdaf3e31dddd0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  b1: 10
+  b1: 1
   shot1: {fileID: 687240486}
-  b2: 100
+  b2: 5
   shot2: {fileID: 884969725}
   startCoin: 5
 --- !u!114 &481591271
