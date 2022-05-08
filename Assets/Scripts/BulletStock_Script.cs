@@ -11,6 +11,7 @@ public class BulletStock_Script : MonoBehaviour
     DataManager_Script dataManager_;
     [SerializeField] int Stock;
     [SerializeField] int MAX;
+    [SerializeField] int Loadnum;
     public bool isMax { get; private set; }
     public bool canReload { get; private set; }
     [SerializeField] List<GameObject> imgs=new List<GameObject>();
