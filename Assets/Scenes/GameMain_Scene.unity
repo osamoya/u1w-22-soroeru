@@ -2350,7 +2350,7 @@ MonoBehaviour:
   shot1: {fileID: 687240486}
   b2: 100
   shot2: {fileID: 884969725}
-  startCoin: 100
+  startCoin: 5
 --- !u!114 &481591271
 MonoBehaviour:
   m_ObjectHideFlags: 0

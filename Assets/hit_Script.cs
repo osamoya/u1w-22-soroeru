@@ -24,7 +24,7 @@ public class hit_Script : MonoBehaviour
         if (isSafeTime)
         {
             count += Time.deltaTime;
-            if (count >= 2f)//2•b‚½‚Á‚½‚ç–³“G‰ğœ
+            if (count >= 4f)//2•b‚½‚Á‚½‚ç–³“G‰ğœ
             {
                 Debug.Log("‰ğœ");
                 isSafeTime = false;
@@ -46,7 +46,7 @@ public class hit_Script : MonoBehaviour
         sequence.Join(fly.transform.DOMove(sPos, 2f));
         sequence.Append(renderer.DOFade(1, 0));
         sequence.Play();
-
+        DataManager_Script.PaidCoin();
         
     }
 }
