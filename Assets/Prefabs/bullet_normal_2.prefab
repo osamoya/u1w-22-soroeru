@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8973376804760600808}
   - component: {fileID: 2622498843029701330}
   - component: {fileID: -3039958314570347169}
+  - component: {fileID: -5117553517025390534}
   m_Layer: 0
   m_Name: bullet_normal_2
   m_TagString: Untagged
@@ -117,3 +118,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b311dadca158d344594f77cee8ba968c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!68 &-5117553517025390534
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8973376804760600811}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 11.346464, y: 0.3907211}
+  - {x: 9.51409, y: -0.2463826}
+  - {x: 7.7960854, y: -0.6741518}
+  - {x: 3.57648, y: -0.76747775}
+  - {x: 1.6603342, y: -1.599079}
+  - {x: -11.428634, y: -1.6277246}
+  - {x: -11.429119, y: 2.2453165}
+  - {x: 1.7733023, y: 2.149013}
+  - {x: 3.5096877, y: 1.5037591}
+  - {x: 7.9347715, y: 1.3998678}
+  - {x: 11.310406, y: 0.41190755}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
