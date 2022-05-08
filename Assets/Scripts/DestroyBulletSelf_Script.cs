@@ -15,6 +15,14 @@ public class DestroyBulletSelf_Script : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 10.0f) Destroy(this.gameObject);
+        if (time > 30.0f) Destroy(this.gameObject);
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag != "Player")
+        {
+            return;
+        }
+        Debug.Log("aaa");
     }
 }

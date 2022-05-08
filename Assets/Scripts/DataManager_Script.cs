@@ -33,7 +33,9 @@ public class DataManager_Script : MonoBehaviour
         
         Debug.Log("c‚èF"+coin);
 
-
-
+    }
+    static public void PaidCoin()
+    {
+        coin++;
     }
 }

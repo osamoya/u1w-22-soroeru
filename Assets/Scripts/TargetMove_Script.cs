@@ -6,14 +6,13 @@ using DG.Tweening;
 public class TargetMove_Script : MonoBehaviour
 {
     Vector2 move=new Vector2(0,0);
+    Vector2 center = new Vector2(-4.5f, 3);
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        this.transform.DOMoveX(0f,2)
-            .SetEase(Ease.InCubic)//Ease.InOutBounce)
-            .SetLoops(10000,LoopType.Yoyo);
+       
     }
 
     private void FixedUpdate()
@@ -22,7 +21,7 @@ public class TargetMove_Script : MonoBehaviour
         //fixedÅŒã‚Å‰Šú‰»‚µ‚ÄAÅ‰‚ÉˆÚ“®‚³‚¹‚é
 
         //ˆÚ“®‚³‚¹‚é
-        rb.AddForce(move.normalized);
+        rb.AddForce(center-new Vector2(transform.position.x,transform.position.y));
 
         //‰Šú‰»
         move = new Vector2(0,0);
@@ -32,10 +31,11 @@ public class TargetMove_Script : MonoBehaviour
         //Õ“Ë‚µ‚½
         //Õ“Ë‚Ìˆ—
         //ƒRƒCƒ“
+        
         //–³“GŠÔ
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float x=collision.transform.position.x;
+        
     }
 }
