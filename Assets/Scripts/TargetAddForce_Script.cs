@@ -17,7 +17,15 @@ public class TargetAddForce_Script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (transform.position.x>=0)
+        {
+            rb.transform.position = new Vector2(-8,transform.position.y);
+
+        }
+        if (transform.position.x<-8.5)
+        {
+            rb.transform.position = new Vector2(-0.5f, transform.position.y);
+        }
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
