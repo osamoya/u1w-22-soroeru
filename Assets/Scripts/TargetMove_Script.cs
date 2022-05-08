@@ -11,9 +11,7 @@ public class TargetMove_Script : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        this.transform.DOMoveX(0f,2)
-            .SetEase(Ease.InCubic)//Ease.InOutBounce)
-            .SetLoops(10000,LoopType.Yoyo);
+       
     }
 
     private void FixedUpdate()
@@ -22,7 +20,7 @@ public class TargetMove_Script : MonoBehaviour
         //fixedÅŒã‚Å‰Šú‰»‚µ‚ÄAÅ‰‚ÉˆÚ“®‚³‚¹‚é
 
         //ˆÚ“®‚³‚¹‚é
-        rb.AddForce(move.normalized);
+        rb.AddForce(move-new Vector2(transform.position.x,transform.position.y));
 
         //‰Šú‰»
         move = new Vector2(0,0);
