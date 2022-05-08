@@ -68,11 +68,11 @@ public class TimeCount_Script : MonoBehaviour
                 Debug.Log("終了！");
                 this.GetComponent<FadeCover_Script>().OnClickFade();
             }
-            s = ""+dispD+"日目 " +dispH+":"+dispM.ToString("D2");
+            s = ""+dispD+"日目　\n" +dispH+":"+dispM.ToString("D2");
         }
         else
         {
-            s = "" + dispD + "日目 " + dispH + ":" + dispM.ToString("D2");
+            s = "" + dispD + "日目　\n " + dispH + ":" + dispM.ToString("D2");
         }
         //文字列にする
         tmp.text = s;
