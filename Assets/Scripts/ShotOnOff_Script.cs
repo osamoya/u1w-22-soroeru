@@ -9,6 +9,8 @@ public class ShotOnOff_Script : MonoBehaviour
     public GameObject bullet;
     [SerializeField] bool isRotate;
     [SerializeField] bool isLook;
+    [SerializeField] int RPS;
+    [SerializeField] float spead;
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject muzzle2;
     [SerializeField] int d1;
@@ -68,12 +70,12 @@ public class ShotOnOff_Script : MonoBehaviour
                 source.mute = true;return;
             }
             stock.reload();
-            AMMO += 1000;
+            AMMO += 10;
         }
         //âπÇèoÇµÇƒ
         source.mute = false;
 
-        if (flameCount % 20 != 0) { return; }
+        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
         shot(0);
         shot(d1);
         shot(d2);
@@ -94,7 +96,7 @@ public class ShotOnOff_Script : MonoBehaviour
             AMMO += 1000;
         }
         source.mute = false;
-        if (flameCount % 20 != 0) { return; }
+        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
         shot();
         AMMO--;
         
@@ -127,25 +129,7 @@ public class ShotOnOff_Script : MonoBehaviour
             b.transform.rotation = q * b.transform.rotation;
         }
         
-        b.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b.transform.position, new Vector2(x, y)));
-        Debug.Log("1Ç¬ÇﬂèIóπ");
-        if (!isLook)
-        {
-            Debug.Log("Ç±Ç±Ç‹Ç≈óàÇƒÇ‹Ç∑");
-            GameObject b2 = Instantiate(bullet);
-            b2.transform.position = muzzle2.transform.position;
-            diff = b2.transform.position - new Vector3(x, y, 0);
-
-            if (isRotate)
-            {
-                b2.transform.rotation = Quaternion.FromToRotation(Vector3.up, diff);//Ç±Ç±Ç≈ê≥ñ 
-                                                                                   //Ç≥ÇÁÇ…90ìxÇ∏ÇÁÇµÇƒê≥ñ Ç∆Ç¢Ç§Ç±Ç∆Ç…Ç∑ÇÈ
-                Quaternion q = Quaternion.AngleAxis(-90, new Vector3(0, 0, 1));
-                b2.transform.rotation = q * b2.transform.rotation;
-            }
-
-            b2.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b2.transform.position, new Vector2(x, y)));
-        }
+        b.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b.transform.position, new Vector2(x, y)) * spead / 10);
     }
 
     public void shot(Vector2 v)
@@ -165,7 +149,7 @@ public class ShotOnOff_Script : MonoBehaviour
         //Ç»Ç»ÇﬂÇ…î≠éÀ
         float theta = deg * Mathf.Deg2Rad;
         Vector2 v = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
-        b.GetComponent<Rigidbody2D>().AddForce(v);
+        b.GetComponent<Rigidbody2D>().AddForce(v*spead/10);
 
     }
 }
