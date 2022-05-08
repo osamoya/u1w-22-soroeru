@@ -8,16 +8,20 @@ public class ShotOnOff_Script : MonoBehaviour
     public bool Shooting { get; private set; }
     public GameObject bullet;
     [SerializeField] bool isRotate;
+    [SerializeField] bool isLook;
+    [SerializeField] int RPS;
+    [SerializeField] float spead;
     [SerializeField] GameObject muzzle;
     [SerializeField] int d1;
     [SerializeField] int d2;
     [SerializeField] AudioClip clip;
     [SerializeField] AudioSource source;
     [SerializeField] BulletStock_Script stock;
+    int flameCount;
     // Start is called before the first frame update
     void Start()
     {
-        AMMO = 500;
+        AMMO = 100;
         source.mute=true;
     }
 
@@ -32,20 +36,20 @@ public class ShotOnOff_Script : MonoBehaviour
         
         if (Shooting)
         {
-            if (AMMO < 3) {
-                if (stock.canReload)
-                {
-                    stock.reload();
-                    AMMO += 1000;
-                }
-                source.mute = true; 
-                return; }
-            shot(0);
-            shot(d1);
-            shot(d2);
-            AMMO -= 3;
-            Debug.Log("–Â‚ç‚µ‚Ü‚·");
-            source.mute = false;
+            flameCount++;
+
+            if (isLook)//’Ç”ö‚Ì‚Ù‚¤
+            {
+                shot4u();
+                return;
+            }
+            else
+            {
+                Shot3way();
+                return;
+            }
+            
+            
         }
         else
         {
@@ -53,6 +57,50 @@ public class ShotOnOff_Script : MonoBehaviour
         }
         
     }
+
+
+    void Shot3way()
+    {
+        
+        if (AMMO < 3)
+        {
+            if (!stock.canReload)
+            {
+                source.mute = true;return;
+            }
+            stock.reload();
+            AMMO += 10;
+        }
+        //‰¹‚ðo‚µ‚Ä
+        source.mute = false;
+
+        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
+        shot(0);
+        shot(d1);
+        shot(d2);
+        AMMO -= 3;
+        
+
+    }
+    void shot4u()
+    {
+
+        if (AMMO < 1)
+        {
+            if (!stock.canReload)
+            {
+                source.mute = true; return;
+            }
+            stock.reload();
+            AMMO += 1000;
+        }
+        source.mute = false;
+        if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
+        shot();
+        AMMO--;
+        
+    }
+
 
     void shot()
     {
@@ -80,7 +128,7 @@ public class ShotOnOff_Script : MonoBehaviour
             b.transform.rotation = q * b.transform.rotation;
         }
         
-        b.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b.transform.position, new Vector2(x, y)));
+        b.GetComponent<Rigidbody2D>().AddForce(ShotSimple_Script.GetDiff(b.transform.position, new Vector2(x, y)) * spead / 10);
     }
 
     public void shot(Vector2 v)
@@ -100,7 +148,7 @@ public class ShotOnOff_Script : MonoBehaviour
         //‚È‚È‚ß‚É”­ŽË
         float theta = deg * Mathf.Deg2Rad;
         Vector2 v = new Vector2(Mathf.Cos(theta), Mathf.Sin(theta));
-        b.GetComponent<Rigidbody2D>().AddForce(v);
+        b.GetComponent<Rigidbody2D>().AddForce(v*spead/10);
 
     }
 }
