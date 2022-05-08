@@ -12,6 +12,7 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] int RPS;
     [SerializeField] float spead;
     [SerializeField] GameObject muzzle;
+    [SerializeField] bool haveSub;
     [SerializeField] int d1;
     [SerializeField] int d2;
     [SerializeField] AudioClip clip;
@@ -19,11 +20,13 @@ public class ShotOnOff_Script : MonoBehaviour
     [SerializeField] BulletStock_Script stock;
     int flameCount;
     float timecount;
+    subShot_Script sub;
     // Start is called before the first frame update
     void Start()
     {
         AMMO = 100;
         source.mute=true;
+        sub = GetComponent<subShot_Script>();
     }
 
     // Update is called once per frame
@@ -63,7 +66,7 @@ public class ShotOnOff_Script : MonoBehaviour
     void Shot3way()
     {
         
-        if (AMMO < 3)
+        if (AMMO < 6)
         {
             if (!stock.canReload)
             {
@@ -78,12 +81,13 @@ public class ShotOnOff_Script : MonoBehaviour
 
         //if (flameCount % ((int)(1f / Time.deltaTime) / RPS) != 0) { return; }
         if (timecount<(1.0f/RPS)) { return; }
-
         Debug.Log("shot:"+timecount);
         shot(0);
         shot(d1);
         shot(d2);
-        AMMO -= 3;
+        if (haveSub) { sub.subShot(1); }
+
+        AMMO -= 6;
         timecount = 0;
 
     }
