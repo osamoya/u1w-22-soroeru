@@ -29,19 +29,19 @@ public class TargetAddForce_Script : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D col)
     {
-         Debug.Log("‚Í‚¢‚Á‚½");
+         //Debug.Log("‚Í‚¢‚Á‚½");
         float difx = transform.position.x - col.transform.position.x;
         if (difx > 0)
         {
-            Debug.Log("a:dif=" + difx);
+            //Debug.Log("a:dif=" + difx);
             difx = rate*difx - rad;
-            Debug.Log("force=" + difx);
+            //Debug.Log("force=" + difx);
         }
         else
         {
-            Debug.Log("b:dif=" + difx);
+            //Debug.Log("b:dif=" + difx);
             difx = rate*difx + rad;
-            Debug.Log("force=" + difx);
+            //Debug.Log("force=" + difx);
         }
         
         rb.AddForce(new Vector2(-difx,0)*power);

@@ -31,10 +31,11 @@ public class TargetMove_Script : MonoBehaviour
         //Õ“Ë‚µ‚½
         //Õ“Ë‚Ìˆ—
         //ƒRƒCƒ“
+        
         //–³“GŠÔ
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        float x=collision.transform.position.x;
+        
     }
 }
