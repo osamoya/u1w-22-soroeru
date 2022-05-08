@@ -32,4 +32,11 @@ public class FadeCover_Script : MonoBehaviour
         //DOFade(0, 1f).;
         sequence.Play();
     }
+    public void OnClickResult()
+    {
+        panel.SetActive(true);
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(p.DOFade(1, 1f));
+        sequence.Play();
+    }
 }
