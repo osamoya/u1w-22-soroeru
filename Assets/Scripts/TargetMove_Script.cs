@@ -25,6 +25,7 @@ public class TargetMove_Script : MonoBehaviour
         rb.AddForce(move.normalized);
 
         //‰Šú‰»
+        move = new Vector2(0,0);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
